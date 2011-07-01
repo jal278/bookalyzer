@@ -1,0 +1,8 @@
+Ad hoc tool to analyze the readibility of a book.
+
+It has several dependencies:
+tesseract-ocr
+selenium RC and firefox webdriver
+imagemagick
+mako templates
+A google api key to do ISBN lookups through the google books api

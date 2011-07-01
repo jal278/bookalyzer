@@ -1,8 +1,8 @@
 import urllib2
 import urllib
 import json
-
-key="AIzaSyCDBK6WXqLlTEcj7BCh_AkdmOIuEeVVhhs"
+import apikey
+key=apikey.key 
 
 def get_isbn(title):
  global key
