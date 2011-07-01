@@ -1,0 +1,28 @@
+
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+  <head> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+    <title>Google Book Search Embedded Viewer API Example</title> 
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script> 
+    <script type="text/javascript"> 
+      google.load("books", "0");
+      viewer=null;
+      function initialize() {
+        viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+        viewer.load('ISBN:${ISBN}',null,alertInitialized);
+      }
+      function alertInitialized() {
+        for(var i=0;i<${ZOOMS};i++)
+        viewer.zoomIn();
+        for(var i=0;i<${PAGE_TURNS};i++)
+        viewer.nextPage();
+      } 
+      google.setOnLoadCallback(initialize);
+    </script> 
+  </head> 
+  <body> 
+    <div id="viewerCanvas" style="width: 1200px; height: ${HEIGHT}px"></div> 
+  </body> 
+</html> 
